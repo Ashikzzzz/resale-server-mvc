@@ -26,4 +26,8 @@ const userSchema =new mongoose.Schema({
             massage: "role can't be others."
         }
     },
-})
+});
+
+const userModel = mongoose.model("userModel",userSchema)
+
+module.exports = userModel;
