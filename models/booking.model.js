@@ -44,15 +44,16 @@ const bookingSchema = new mongoose.Schema({
       },
 
       phone: {
-        type: Number,
-        required : True,
+        type: String,
+        required : true,
         min: [11, "Please provide at least 11 digit"],
         max: [11, "Please provide at least 11 digit"]
       },
       
       location: {
         type: String,
-        required: True,
+        required: true,
+        trim: true
       }
 },{
     timestamps: true
