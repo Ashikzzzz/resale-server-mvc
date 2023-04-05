@@ -1,5 +1,5 @@
 const  bookingModel= require('../models/booking.model')
-const { saveAbookingService } = require('../services/booking.service')
+const { saveAbookingService, getAllBookingService } = require('../services/booking.service')
 
 
 // save a booking ------------------------
@@ -18,6 +18,25 @@ exports.postAbooking=async(req, res, next)=>{
         res.status(400).json({
             status: 'error',
             massage: "Data inserted Error",
+            error: error.message
+        })
+    }
+}
+
+// get all booking ---------------
+exports.getAllBooking=async(req,res,next)=>{
+    try {
+    const result = await getAllBookingService()  
+    res.status(200).json({
+        status: 'success',
+        massage: "Data Get Successfully!",
+        data: result
+    })
+    }
+     catch (error) {
+        res.status(400).json({
+            status: 'error',
+            massage: "Data Get Error",
             error: error.message
         })
     }
