@@ -5,5 +5,10 @@ const router = express.Router()
 router
 .route("/")
 .post(userController.saveAuser)
+.get(userController.getAllUser)
+
+router.route('/:id')
+.delete(userController.deleteAuser)
+.patch(userController.updateAuser)
 
 module.exports = router;
