@@ -7,4 +7,11 @@ router
 .post(bookingController.postAbooking)
 .get(bookingController.getAllBooking)
 
+router
+.route("/:id")
+.get(bookingController.getAsingleBooking)
+.delete(bookingController.deleteAbooking)
+.patch(bookingController.updateAbooking)
+
+
 module.exports = router;

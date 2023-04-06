@@ -1,4 +1,5 @@
 const userModel = require('../models/user.model')
+const { getAsingleBookingService } = require('../services/booking.service')
 const { saveUserService, getAllUserService, deleteAuserService, updateAuserService } = require('../services/user.service')
 
 
@@ -7,7 +8,6 @@ exports.saveAuser =async (req, res, next)=>{
     try {
         
         const result = await saveUserService(req.body)
-        console.log(result)
         res.status(200).json({
             status: 'success',
             massage: "Data inserted Successfully!",
@@ -82,3 +82,4 @@ exports.updateAuser = async(req,res,next)=>{
         })
     }
 }
+
